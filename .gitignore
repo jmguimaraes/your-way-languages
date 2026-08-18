@@ -1,0 +1,6 @@
+# Pasta de configuração local do Claude Code (não faz parte do site)
+.claude/
+
+# Instaladores que foram salvos sem querer dentro de assets (não são do site)
+assets/*.msi
+assets/*.exe

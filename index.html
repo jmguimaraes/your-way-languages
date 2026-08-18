@@ -1,0 +1,1915 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Way Languages | Curso de Idiomas em Resende - RJ</title>
+<link rel="icon" type="image/png" href="assets/logoyourwaylanguages.png">
+<meta name="description" content="Curso de idiomas focado na aprendizagem para fins específicos. Inglês para bebês, crianças, adolescentes e adultos. Preparatório para exames. Resende - RJ.">
+<!-- Segurança: CSP restringe de onde o site pode carregar script/estilo/fonte/imagem/iframe.
+     Observação: a diretiva frame-ancestors (proteção contra clickjacking) é ignorada quando
+     entregue via <meta> pelo próprio padrão do navegador — só funciona como header HTTP real
+     enviado pelo servidor de hospedagem. Por isso ela também está nos arquivos de configuração
+     (_headers / vercel.json / .htaccess) gerados junto com o site. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' file:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; frame-src https://www.google.com; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'self';">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════ */
+/*  TOKENS                                     */
+/* ═══════════════════════════════════════════ */
+:root {
+  --red: #D94848;
+  --red-dark: #B93636;
+  --red-light: #FCEAEA;
+  --navy: #1C2D4A;
+  --navy-light: #2A4066;
+  --slate: #4A5568;
+  --warm-gray: #F7F5F2;
+  --cream: #FFFDFB;
+  --white: #FFFFFF;
+  --text: #2D3748;
+  --text-light: #718096;
+  --border: #E2E0DC;
+  --shadow-sm: 0 1px 3px rgba(28,45,74,0.06);
+  --shadow-md: 0 4px 16px rgba(28,45,74,0.08);
+  --shadow-lg: 0 8px 32px rgba(28,45,74,0.12);
+  --shadow-xl: 0 16px 48px rgba(28,45,74,0.16);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-brand: 'Permanent Marker', cursive;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ═══════════════════════════════════════════ */
+/*  RESET & BASE                               */
+/* ═══════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--cream);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; border: none; font-family: inherit; }
+ul { list-style: none; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ═══════════════════════════════════════════ */
+/*  NAV                                        */
+/* ═══════════════════════════════════════════ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255,253,251,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  transition: var(--transition);
+}
+.nav.scrolled { box-shadow: var(--shadow-md); }
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--navy);
+}
+.nav-logo-icon {
+  height: 46px;
+  width: auto;
+  flex-shrink: 0;
+}
+.nav-logo-icon img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+.nav-logo-text {
+  font-family: var(--font-brand);
+  font-weight: 400;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+}
+.nav-logo-text .highlight { color: var(--red); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav-links a {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--slate);
+  border-radius: 8px;
+  transition: var(--transition);
+}
+.nav-links a:hover {
+  color: var(--navy);
+  background: var(--warm-gray);
+}
+.nav-cta {
+  background: var(--red) !important;
+  color: var(--white) !important;
+  font-weight: 600 !important;
+  padding: 10px 20px !important;
+}
+.nav-cta:hover { background: var(--red-dark) !important; }
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  padding: 8px;
+}
+.nav-toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--navy);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* ═══════════════════════════════════════════ */
+/*  HERO                                       */
+/* ═══════════════════════════════════════════ */
+.hero {
+  padding: 140px 0 100px;
+  background: linear-gradient(160deg, var(--cream) 0%, var(--red-light) 50%, var(--warm-gray) 100%);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgba(217,72,72,0.06);
+  top: -100px;
+  right: -100px;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(28,45,74,0.04);
+  bottom: -50px;
+  left: -50px;
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--red);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+}
+.hero-badge-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--red);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--red);
+  position: relative;
+}
+.hero h1 em::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--red);
+  border-radius: 2px;
+  opacity: 0.3;
+}
+.hero-sub {
+  font-size: 1.15rem;
+  color: var(--slate);
+  line-height: 1.8;
+  margin-bottom: 36px;
+  max-width: 520px;
+}
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+.btn-primary {
+  background: var(--red);
+  color: var(--white);
+  box-shadow: 0 4px 16px rgba(217,72,72,0.3);
+}
+.btn-primary:hover {
+  background: var(--red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(217,72,72,0.4);
+}
+.btn-secondary {
+  background: var(--white);
+  color: var(--navy);
+  border: 2px solid var(--border);
+}
+.btn-secondary:hover {
+  border-color: var(--navy);
+  background: var(--navy);
+  color: var(--white);
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: 440px;
+}
+.hero-stat {
+  display: block;
+  min-width: 0;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.hero-stat:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.hero-stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+  font-size: 1.4rem;
+}
+.hero-stat-icon.red { background: var(--red-light); }
+.hero-stat-icon.blue { background: rgba(28,45,74,0.08); }
+.hero-stat-num {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--navy);
+  overflow-wrap: break-word;
+}
+.hero-stat-label {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+/* ═══════════════════════════════════════════ */
+/*  SECTION HEADERS                            */
+/* ═══════════════════════════════════════════ */
+.section-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+}
+.section-eyebrow::before,
+.section-eyebrow::after {
+  content: '';
+  width: 24px;
+  height: 2px;
+  background: var(--red);
+  border-radius: 2px;
+  opacity: 0.4;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+.section-desc {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ═══════════════════════════════════════════ */
+/*  ABOUT                                      */
+/* ═══════════════════════════════════════════ */
+.about {
+  padding: 100px 0;
+  background: var(--white);
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.about-img-wrap {
+  position: relative;
+}
+.about-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, var(--red-light), rgba(28,45,74,0.08));
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  overflow: hidden;
+}
+.about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-img-float-logo {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 8px;
+  display: block;
+}
+.about-img-float {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--white);
+  color: var(--navy);
+  border-radius: var(--radius);
+  padding: 20px 28px;
+  box-shadow: var(--shadow-lg);
+}
+.about-img-float-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+}
+.about-img-float-label {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+.about-content .section-eyebrow { justify-content: flex-start; }
+.about-content .section-title { text-align: left; }
+.about-text {
+  color: var(--slate);
+  font-size: 1.05rem;
+  margin-bottom: 32px;
+}
+.about-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.about-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--warm-gray);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--navy);
+}
+.about-feature-check {
+  width: 24px;
+  height: 24px;
+  background: var(--red);
+  color: var(--white);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════ */
+/*  COURSES                                    */
+/* ═══════════════════════════════════════════ */
+.courses {
+  padding: 100px 0;
+  background: var(--warm-gray);
+}
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.courses-grid .course-card { padding: 36px 28px; }
+.course-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 36px 28px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--red);
+}
+.course-card:target {
+  transform: translateY(-6px);
+  box-shadow: 0 0 0 4px rgba(217,72,72,0.25), var(--shadow-xl);
+  border-color: var(--red);
+}
+.course-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+.course-card:nth-child(1)::before { background: #FF6B6B; }
+.course-card:nth-child(2)::before { background: #4ECDC4; }
+.course-card:nth-child(3)::before { background: #45B7D1; }
+.course-card:nth-child(4)::before { background: #96CEB4; }
+.course-card:nth-child(5)::before { background: #D4A5E8; }
+.course-card:nth-child(6)::before { background: #FFB6C1; }
+
+.course-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+.course-card:nth-child(1) .course-icon { background: #FFF0F0; }
+.course-card:nth-child(2) .course-icon { background: #E0FAF7; }
+.course-card:nth-child(3) .course-icon { background: #E0F4FA; }
+.course-card:nth-child(4) .course-icon { background: #E8F5EE; }
+.course-card:nth-child(5) .course-icon { background: #F5EBFA; }
+.course-card:nth-child(6) .course-icon { background: #FFEEF0; }
+
+.course-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.course-age {
+  font-size: 0.85rem;
+  color: var(--red);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.course-desc {
+  font-size: 0.92rem;
+  color: var(--slate);
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+.course-details {
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.course-detail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: var(--slate);
+}
+.course-detail-icon {
+  width: 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.course-cta {
+  display: block;
+  text-align: center;
+  margin-top: auto;
+  padding: 12px;
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+.course-cta:hover { background: var(--red); }
+
+/* ═══════════════════════════════════════════ */
+/*  METHODOLOGY                                */
+/* ═══════════════════════════════════════════ */
+.method {
+  padding: 100px 0;
+  background: var(--navy);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.method::before {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: rgba(217,72,72,0.1);
+  top: -100px;
+  right: -100px;
+}
+.method .section-eyebrow { color: rgba(255,255,255,0.6); }
+.method .section-eyebrow::before,
+.method .section-eyebrow::after { background: rgba(255,255,255,0.3); }
+.method .section-title { color: var(--white); }
+.method .section-desc { color: rgba(255,255,255,0.7); }
+
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+.method-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  text-align: center;
+  transition: var(--transition);
+}
+.method-card:target {
+  background: rgba(217,72,72,0.18);
+  border-color: var(--red);
+  box-shadow: 0 0 0 4px rgba(217,72,72,0.25);
+  transform: translateY(-4px);
+}
+.method-card:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-4px);
+}
+.method-icon {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+}
+.method-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+.method-card p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.7;
+}
+
+/* ═══════════════════════════════════════════ */
+/*  TESTIMONIALS                               */
+/* ═══════════════════════════════════════════ */
+.testimonials {
+  padding: 100px 0;
+  background: var(--white);
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+.testimonials-carousel {
+  position: relative;
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.testimonial-viewport {
+  overflow: hidden;
+  flex: 1;
+}
+.testimonial-track {
+  display: flex;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.testimonial-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+.carousel-arrow {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--navy);
+  transition: var(--transition);
+}
+.carousel-arrow:hover { background: var(--red); color: var(--white); }
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--border);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.carousel-dot.active { background: var(--red); width: 24px; }
+.testimonial-card {
+  background: var(--warm-gray);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  position: relative;
+}
+.testimonial-card::before {
+  content: '"';
+  font-family: var(--font-display);
+  font-size: 4rem;
+  color: var(--red);
+  opacity: 0.2;
+  position: absolute;
+  top: 16px;
+  left: 24px;
+  line-height: 1;
+}
+.testimonial-text {
+  font-size: 1rem;
+  color: var(--slate);
+  line-height: 1.8;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+  font-style: italic;
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.testimonial-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--white);
+}
+.testimonial-slide:nth-child(1) .testimonial-avatar { background: var(--red); }
+.testimonial-slide:nth-child(2) .testimonial-avatar { background: var(--navy); }
+.testimonial-slide:nth-child(3) .testimonial-avatar { background: #4ECDC4; }
+.testimonial-slide:nth-child(4) .testimonial-avatar { background: #F6AD55; }
+.testimonial-slide:nth-child(5) .testimonial-avatar { background: #9B7EDE; }
+.testimonial-name {
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 0.95rem;
+}
+.testimonial-role {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+.testimonial-stars {
+  color: #F6AD55;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+/* ═══════════════════════════════════════════ */
+/*  GALLERY                                    */
+/* ═══════════════════════════════════════════ */
+.gallery {
+  padding: 100px 0;
+  background: var(--warm-gray);
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 260px);
+  gap: 16px;
+}
+.gallery-item {
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gallery-item:hover { transform: scale(1.02); }
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-item:nth-child(1) { background: linear-gradient(135deg, #FFE0E0, #FFC4C4); }
+.gallery-item:nth-child(2) { background: linear-gradient(135deg, #E0F0FF, #C4DFFF); }
+.gallery-item:nth-child(3) { background: linear-gradient(135deg, #E0FAF2, #C4F0E0); }
+.gallery-item:nth-child(4) { background: linear-gradient(135deg, #FFF4E0, #FFE8C4); }
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(28,45,74,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+/* ═══════════════════════════════════════════ */
+/*  CONTACT                                    */
+/* ═══════════════════════════════════════════ */
+.contact {
+  padding: 100px 0;
+  background: var(--white);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+.contact-info-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.contact-info-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  background: var(--warm-gray);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+.contact-info-card:hover { background: var(--red-light); }
+.contact-info-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--red);
+  color: var(--white);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.contact-info-icon svg, .footer-social a svg {
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+}
+.whatsapp-btn svg {
+  width: 28px;
+  height: 28px;
+  fill: #fff;
+}
+.contact-info-label {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.contact-info-value {
+  font-weight: 600;
+  color: var(--navy);
+  font-size: 0.95rem;
+  margin-top: 2px;
+}
+.contact-hours-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 6px;
+  font-size: 0.88rem;
+}
+.contact-hours-table td {
+  padding: 3px 0;
+  color: var(--navy);
+}
+.contact-hours-table td:first-child {
+  color: var(--slate);
+  font-weight: 500;
+  padding-right: 16px;
+}
+.contact-hours-table td:last-child {
+  font-weight: 600;
+  text-align: right;
+}
+.contact-hours-table tr.closed td:last-child { color: var(--red); }
+.contact-map {
+  width: 100%;
+  height: 220px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 2px solid var(--border);
+}
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.contact-form-wrap {
+  background: var(--warm-gray);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+}
+.contact-form-wrap h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.contact-form-wrap p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 28px;
+}
+.form-group {
+  margin-bottom: 16px;
+}
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  background: var(--white);
+  transition: var(--transition);
+  outline: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px var(--red-light);
+}
+.form-group textarea { resize: vertical; min-height: 100px; }
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.form-submit {
+  width: 100%;
+  padding: 14px;
+  background: var(--red);
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: var(--transition);
+  margin-top: 8px;
+}
+.form-submit:hover {
+  background: var(--red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(217,72,72,0.3);
+}
+
+/* ═══════════════════════════════════════════ */
+/*  FAQ                                        */
+/* ═══════════════════════════════════════════ */
+.faq {
+  padding: 100px 0;
+  background: var(--white);
+}
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.faq-item {
+  background: var(--warm-gray);
+  border-radius: var(--radius);
+  padding: 4px 24px;
+  transition: var(--transition);
+}
+.faq-item[open] { background: var(--red-light); }
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 18px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 1rem;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+';
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--red);
+  color: var(--white);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item-answer {
+  color: var(--slate);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  padding: 0 0 20px;
+}
+
+/* ═══════════════════════════════════════════ */
+/*  CTA BANNER                                 */
+/* ═══════════════════════════════════════════ */
+.cta-banner {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
+  text-align: center;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  top: -200px;
+  left: -100px;
+}
+.cta-banner h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+.cta-banner p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+}
+.cta-banner .btn-white {
+  background: var(--white);
+  color: var(--red);
+  font-weight: 700;
+  padding: 16px 36px;
+  border-radius: 10px;
+  font-size: 1rem;
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition);
+  position: relative;
+  z-index: 1;
+}
+.cta-banner .btn-white:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* ═══════════════════════════════════════════ */
+/*  FOOTER                                     */
+/* ═══════════════════════════════════════════ */
+.footer {
+  background: var(--navy);
+  color: rgba(255,255,255,0.7);
+  padding: 64px 0 32px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.footer-brand-icon {
+  height: 44px;
+  width: auto;
+  flex-shrink: 0;
+  background: var(--white);
+  border-radius: 8px;
+  padding: 2px 6px;
+}
+.footer-brand-icon img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+.footer-brand-name {
+  font-family: var(--font-brand);
+  font-weight: 400;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+  color: var(--white);
+}
+.footer-desc {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  max-width: 320px;
+}
+.footer-col h4 {
+  color: var(--white);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.footer-col a {
+  display: block;
+  padding: 5px 0;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+.footer-col a:hover { color: var(--white); padding-left: 6px; }
+.footer-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+.footer-social a {
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  padding: 0;
+  transition: var(--transition);
+}
+.footer-social a:hover {
+  background: var(--red);
+  color: var(--white);
+  padding-left: 0;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+/* ═══════════════════════════════════════════ */
+/*  WHATSAPP FLOAT                             */
+/* ═══════════════════════════════════════════ */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.whatsapp-label {
+  background: var(--white);
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy);
+  box-shadow: var(--shadow-md);
+  display: none;
+}
+.whatsapp-btn {
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  transition: var(--transition);
+  font-size: 1.8rem;
+  color: white;
+}
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(37,211,102,0.5);
+}
+.whatsapp-float:hover .whatsapp-label { display: block; }
+
+/* ═══════════════════════════════════════════ */
+/*  RESPONSIVE                                 */
+/* ═══════════════════════════════════════════ */
+@media (max-width: 968px) {
+  .hero-inner { grid-template-columns: 1fr; text-align: center; }
+  .hero-sub { margin: 0 auto 36px; }
+  .hero-actions { justify-content: center; }
+  .hero-visual { order: -1; }
+  .hero-card-grid { margin: 0 auto; }
+  .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .about-content .section-eyebrow { justify-content: center; }
+  .about-content .section-title { text-align: center; }
+  .about-text { text-align: center; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, 180px);
+  }
+  .courses-grid { grid-template-columns: repeat(2, 1fr); }
+  .method-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    padding: 16px;
+    box-shadow: var(--shadow-lg);
+    border-top: 1px solid var(--border);
+  }
+  .nav-toggle { display: flex; }
+  .hero { padding: 120px 0 60px; }
+  .hero-card-grid { grid-template-columns: 1fr 1fr; max-width: 100%; }
+  .hero-stat { padding: 16px 12px; }
+  .hero-stat-num { font-size: 1.3rem; }
+  .about-img-float { right: 0; bottom: -12px; padding: 14px 20px; }
+  .courses-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+  .method-grid { grid-template-columns: 1fr 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; text-align: center; }
+  .footer-desc { margin: 0 auto; }
+  .footer-social { justify-content: center; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+  .gallery-grid { grid-template-columns: 1fr; grid-template-rows: repeat(4, 180px); }
+  .contact-form-wrap { padding: 28px 20px; }
+}
+@media (max-width: 480px) {
+  .hero h1 { font-size: 2rem; }
+  .hero-actions { flex-direction: column; align-items: center; }
+  .btn { width: 100%; justify-content: center; }
+  .about-features { grid-template-columns: 1fr; }
+  .method-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav" id="navbar">
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon"><img src="assets/logo-transparent.png" alt="Your Way Languages"></div>
+      <div class="nav-logo-text">Your Way <span class="highlight">Languages</span></div>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#cursos">Cursos</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contato">Contato</a>
+      <a href="https://wa.me/5524992520409?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20as%20turmas." target="_blank" rel="noopener noreferrer" class="nav-cta">Fale Conosco</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="inicio">
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Matrículas abertas
+      </div>
+      <h1>Aprenda inglês<br><em>do seu jeito</em></h1>
+      <p class="hero-sub">
+        Curso de idiomas focado na aprendizagem para fins específicos.
+        Para bebês, crianças, adolescentes e adultos — com metodologia lúdica
+        e preparatório para exames internacionais.
+      </p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5524992520409?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20as%20turmas." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          Agende sua aula experimental
+        </a>
+        <a href="#cursos" class="btn btn-secondary">Conheça as turmas</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card-grid">
+        <a href="#cursos" class="hero-stat">
+          <div class="hero-stat-icon red">🎓</div>
+          <div class="hero-stat-num">6 programas</div>
+          <div class="hero-stat-label">Do iniciante ao avançado</div>
+        </a>
+        <a href="#cursos" class="hero-stat">
+          <div class="hero-stat-icon blue">👨‍👩‍👧‍👦</div>
+          <div class="hero-stat-num">Todas as idades</div>
+          <div class="hero-stat-label">Desde cedo</div>
+        </a>
+        <a href="#conversacao-real" class="hero-stat">
+          <div class="hero-stat-icon red">📚</div>
+          <div class="hero-stat-num">100%</div>
+          <div class="hero-stat-label">Foco em conversação</div>
+        </a>
+        <a href="#material-cambridge" class="hero-stat">
+          <div class="hero-stat-icon blue">📘</div>
+          <div class="hero-stat-num">Cambridge</div>
+          <div class="hero-stat-label">Certificação internacional</div>
+        </a>
+        <a href="#preparatorio" class="hero-stat">
+          <div class="hero-stat-icon red"><svg viewBox="0 0 24 24" fill="none" stroke="#D94848" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><rect x="3" y="3" width="18" height="13" rx="2"/><path d="M7 7.5h10M7 10.5h6"/><circle cx="12" cy="17.5" r="3"/><path d="M9.7 19.9 8.3 23l3.7-1.8 3.7 1.8-1.4-3.1"/></svg></div>
+          <div class="hero-stat-num">Aprovação</div>
+          <div class="hero-stat-label">Preparação para exames</div>
+        </a>
+        <a href="#sobre" class="hero-stat">
+          <div class="hero-stat-icon blue">👥</div>
+          <div class="hero-stat-num">Atenção total</div>
+          <div class="hero-stat-label">Turmas reduzidas</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="about" id="sobre">
+  <div class="container about-grid">
+    <div class="about-img-wrap">
+      <div class="about-img"><img src="assets/frente.JPG" alt="Fachada da Your Way Languages"></div>
+      <div class="about-img-float">
+        <img src="assets/logo-transparent.png" alt="Your Way Languages" class="about-img-float-logo">
+        <div class="about-img-float-label">Resende - RJ</div>
+      </div>
+    </div>
+    <div class="about-content">
+      <div class="section-header" style="margin-bottom:24px">
+        <div class="section-eyebrow">Sobre Nós</div>
+        <h2 class="section-title">Inglês para fins específicos, do seu jeito</h2>
+      </div>
+      <p class="about-text">
+        A <strong>Your Way Languages</strong> é um curso de idiomas em Resende - RJ,
+        focado na aprendizagem para fins específicos. Nossa metodologia combina
+        aulas estruturadas com atividades lúdicas e interativas, garantindo que
+        cada aluno aprenda no seu próprio ritmo e com propósito.
+      </p>
+      <p class="about-text">
+        Acreditamos que aprender inglês pode — e deve — ser divertido! Desde
+        piqueniques temáticos até simulações de situações reais, tornamos cada
+        aula uma experiência única de imersão no idioma.
+      </p>
+      <div class="about-features">
+        <div class="about-feature">
+          <div class="about-feature-check">✓</div>
+          Turmas reduzidas
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-check">✓</div>
+          Metodologia ativa
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-check">✓</div>
+          Atividades lúdicas
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-check">✓</div>
+          Preparatório para exames
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-check">✓</div>
+          Foco em conversação
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-check">✓</div>
+          Todas as faixas etárias
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-check">✓</div>
+          Professores qualificados e certificados
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-check">✓</div>
+          Material Cambridge
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-check">✓</div>
+          Aulas dinâmicas e interativas
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-check">✓</div>
+          Presencial e online
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-check">✓</div>
+          Do iniciante ao avançado
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COURSES ═══ -->
+<section class="courses" id="cursos">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Nossas Turmas</div>
+      <h2 class="section-title">A turma ideal para cada fase da vida</h2>
+      <p class="section-desc">Programas personalizados para bebês, crianças, adolescentes e adultos, com foco em resultados reais.</p>
+    </div>
+    <div class="courses-grid">
+      <div class="course-card">
+        <div class="course-icon">👶</div>
+        <h3 class="course-title">English Baby</h3>
+        <div class="course-age">A partir de 2 anos</div>
+        <p class="course-desc">Primeiro contato com o inglês através de música, movimento e brincadeiras sensoriais. Uma introdução leve e afetiva ao idioma, desde muito cedo.</p>
+        <div class="course-details">
+          <div class="course-detail"><span class="course-detail-icon">🎵</span> Músicas e vídeos infantis em inglês</div>
+          <div class="course-detail"><span class="course-detail-icon">📖</span> Livrinhos ilustrados e contação de histórias</div>
+          <div class="course-detail"><span class="course-detail-icon">🖐️</span> Atividades sensoriais e de movimento</div>
+          <div class="course-detail"><span class="course-detail-icon">🤱</span> Atividades acompanhadas</div>
+          <div class="course-detail"><span class="course-detail-icon">👥</span> Turmas bem reduzidas</div>
+        </div>
+        <a href="https://wa.me/5524992520409?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20as%20turmas." target="_blank" rel="noopener noreferrer" class="course-cta">Saiba mais →</a>
+      </div>
+      <div class="course-card">
+        <div class="course-icon">🧒</div>
+        <h3 class="course-title">English Kids</h3>
+        <div class="course-age">Crianças</div>
+        <p class="course-desc">Aprender inglês brincando! Aulas dinâmicas com jogos, músicas, piqueniques e muita diversão para os pequenos darem os primeiros passos na língua inglesa.</p>
+        <div class="course-details">
+          <div class="course-detail"><span class="course-detail-icon">🎯</span> Conversação e vocabulário lúdico</div>
+          <div class="course-detail"><span class="course-detail-icon">🎮</span> Jogos, músicas e atividades interativas</div>
+          <div class="course-detail"><span class="course-detail-icon">👥</span> Turmas reduzidas</div>
+        </div>
+        <a href="https://wa.me/5524992520409?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20as%20turmas." target="_blank" rel="noopener noreferrer" class="course-cta">Saiba mais →</a>
+      </div>
+      <div class="course-card">
+        <div class="course-icon">🎧</div>
+        <h3 class="course-title">English Teens</h3>
+        <div class="course-age">Adolescentes</div>
+        <p class="course-desc">Inglês com a cara dos teens! Discussões, vídeos, tecnologia e preparação para o futuro acadêmico e profissional dos adolescentes.</p>
+        <div class="course-details">
+          <div class="course-detail"><span class="course-detail-icon">🎯</span> Conversação natural e expressões</div>
+          <div class="course-detail"><span class="course-detail-icon">💻</span> Temas atuais e tecnologia</div>
+          <div class="course-detail"><span class="course-detail-icon">📝</span> Preparação acadêmica</div>
+        </div>
+        <a href="https://wa.me/5524992520409?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20as%20turmas." target="_blank" rel="noopener noreferrer" class="course-cta">Saiba mais →</a>
+      </div>
+      <div class="course-card">
+        <div class="course-icon">💼</div>
+        <h3 class="course-title">English Adults</h3>
+        <div class="course-age">Adultos</div>
+        <p class="course-desc">Inglês prático para a vida profissional e pessoal. Aulas focadas em conversação, negócios, viagens e desenvolvimento de carreira.</p>
+        <div class="course-details">
+          <div class="course-detail"><span class="course-detail-icon">🎯</span> Inglês para negócios e carreira</div>
+          <div class="course-detail"><span class="course-detail-icon">🌍</span> Conversação e situações reais</div>
+          <div class="course-detail"><span class="course-detail-icon">⏰</span> Horários flexíveis</div>
+        </div>
+        <a href="https://wa.me/5524992520409?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20as%20turmas." target="_blank" rel="noopener noreferrer" class="course-cta">Saiba mais →</a>
+      </div>
+      <div class="course-card" id="preparatorio">
+        <div class="course-icon">🏅</div>
+        <h3 class="course-title">Preparatório</h3>
+        <div class="course-age">Exames Internacionais</div>
+        <p class="course-desc">Preparação intensiva para TOEFL, IELTS, Cambridge e outros exames de proficiência. Estratégias, simulados e acompanhamento individual.</p>
+        <div class="course-details">
+          <div class="course-detail"><span class="course-detail-icon">🎯</span> TOEFL, IELTS, Cambridge</div>
+          <div class="course-detail"><span class="course-detail-icon">📊</span> Simulados e feedback individual</div>
+          <div class="course-detail"><span class="course-detail-icon">🏆</span> Foco em aprovação</div>
+        </div>
+        <a href="https://wa.me/5524992520409?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20as%20turmas." target="_blank" rel="noopener noreferrer" class="course-cta">Saiba mais →</a>
+      </div>
+      <div class="course-card">
+        <div class="course-icon">⭐</div>
+        <h3 class="course-title">Aula VIP</h3>
+        <div class="course-age">Todas as idades</div>
+        <p class="course-desc">Aula particular, só você e o professor. Atenção 100% dedicada ao seu aprendizado, no seu ritmo, sem dividir o horário com outros alunos.</p>
+        <div class="course-details">
+          <div class="course-detail"><span class="course-detail-icon">🎯</span> Foco total no seu aprendizado</div>
+          <div class="course-detail"><span class="course-detail-icon">👤</span> Aulas individuais (1 a 1)</div>
+          <div class="course-detail"><span class="course-detail-icon">⏰</span> Horário sob medida</div>
+        </div>
+        <a href="https://wa.me/5524992520409?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20as%20turmas." target="_blank" rel="noopener noreferrer" class="course-cta">Saiba mais →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ METHODOLOGY ═══ -->
+<section class="method" id="metodo">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Nossa Metodologia</div>
+      <h2 class="section-title">Por que a Your Way é diferente?</h2>
+      <p class="section-desc">Cada detalhe pensado para que você realmente aprenda.</p>
+    </div>
+    <div class="method-grid">
+      <div class="method-card" id="conversacao-real">
+        <div class="method-icon">🗣️</div>
+        <h3>Conversação Real</h3>
+        <p>Desde a primeira aula você já pratica conversação com situações do dia a dia.</p>
+      </div>
+      <div class="method-card">
+        <div class="method-icon">🎲</div>
+        <h3>Aprendizado Lúdico</h3>
+        <p>Jogos, dinâmicas e atividades que tornam cada aula uma experiência divertida e memorável.</p>
+      </div>
+      <div class="method-card">
+        <div class="method-icon">🎯</div>
+        <h3>Foco Específico</h3>
+        <p>Ensino personalizado de acordo com seu objetivo: carreira, viagem, exames ou diversão.</p>
+      </div>
+      <div class="method-card">
+        <div class="method-icon">🌱</div>
+        <h3>Seu Ritmo</h3>
+        <p>Respeitamos o tempo de cada aluno. Aqui não tem pressa — tem progresso constante.</p>
+      </div>
+      <div class="method-card" id="material-cambridge">
+        <div class="method-icon">📘</div>
+        <h3>Material Cambridge</h3>
+        <p>Trabalhamos com o material didático de maior qualidade para o ensino de inglês, referência no mundo todo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="testimonials" id="depoimentos">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Depoimentos</div>
+      <h2 class="section-title">O que dizem nossos alunos</h2>
+      <p class="section-desc">Histórias reais de quem encontrou o seu caminho no inglês.</p>
+    </div>
+    <div class="testimonials-carousel">
+      <button class="carousel-arrow carousel-arrow-prev" aria-label="Depoimento anterior">‹</button>
+      <div class="testimonial-viewport">
+      <div class="testimonial-track" id="testimonialTrack">
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "Meu filho adora as aulas! Ele aprendeu tanto vocabulário de forma
+              natural, brincando e se divertindo. Os piqueniques em inglês são incríveis!"
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">A</div>
+              <div>
+                <div class="testimonial-name">Ana Paula</div>
+                <div class="testimonial-role">Mãe de aluno — English Kids</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "A Your Way mudou minha relação com o inglês. As aulas são dinâmicas
+              e a professora tem uma paciência incrível. Recomendo demais!"
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">R</div>
+              <div>
+                <div class="testimonial-name">Renato S.</div>
+                <div class="testimonial-role">Aluno — English Adults</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "Consegui a pontuação que precisava no TOEFL! O preparatório é
+              muito bem estruturado, com simulados e dicas que fizeram toda a diferença."
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">M</div>
+              <div>
+                <div class="testimonial-name">Mariana C.</div>
+                <div class="testimonial-role">Ex-aluna — Preparatório TOEFL</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "Fazia anos que eu queria aprender inglês e nunca tinha coragem. Na Your Way
+              me senti à vontade desde a primeira aula, sem julgamento e no meu ritmo."
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">C</div>
+              <div>
+                <div class="testimonial-name">Carlos E.</div>
+                <div class="testimonial-role">Aluno — Aula VIP</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "Minha filha começou com 5 aninhos e já fala frases inteiras em inglês
+              brincando. A escola é acolhedora e as professoras são super atenciosas."
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">F</div>
+              <div>
+                <div class="testimonial-name">Fernanda L.</div>
+                <div class="testimonial-role">Mãe de aluna — English Kids</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <button class="carousel-arrow carousel-arrow-next" aria-label="Próximo depoimento">›</button>
+    </div>
+    <div class="carousel-dots" id="testimonialDots"></div>
+  </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<section class="gallery" id="galeria">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Galeria</div>
+      <h2 class="section-title">Momentos que fazem a diferença</h2>
+      <p class="section-desc">Conheça um pouco do nosso dia a dia e das atividades especiais.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="assets/gallery-aula.jpg" alt="Aula em turma pequena"><div class="gallery-overlay">Classroom</div></div>
+      <div class="gallery-item"><img src="assets/gallery-stpatrick.jpg" alt="Atividade de St Patrick's Day"><div class="gallery-overlay">St Patrick's Day</div></div>
+      <div class="gallery-item"><img src="assets/gallery-easter.jpg" alt="Atividade de Páscoa"><div class="gallery-overlay">Easter</div></div>
+      <div class="gallery-item"><img src="assets/gallery-mothersday.jpg" alt="Atividade de Dia das Mães"><div class="gallery-overlay">Mother's Day</div></div>
+    </div>
+    <p style="text-align:center; margin-top:24px; color:var(--text-light); font-size:0.9rem;">
+      📸 Acompanhe mais fotos no nosso
+      <a href="https://instagram.com/yourwaylanguages" target="_blank" rel="noopener noreferrer" style="color:var(--red); font-weight:600;">Instagram @yourwaylanguages</a>
+    </p>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Perguntas Frequentes</div>
+      <h2 class="section-title">Tire suas dúvidas</h2>
+      <p class="section-desc">Não encontrou o que procurava? Fale com a gente pelo WhatsApp.</p>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Quais idiomas são oferecidos na Your Way Languages?</summary>
+        <p class="faq-item-answer">Nosso foco principal é o inglês, mas também oferecemos aulas de espanhol para quem quer ampliar ainda mais o repertório de idiomas.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Como é a metodologia de ensino da Your Way Languages?</summary>
+        <p class="faq-item-answer">Trabalhamos exclusivamente com o material Cambridge, referência mundial e um dos conteúdos didáticos mais completos do mercado. Aliado a uma metodologia ativa e professores totalmente qualificados, o aprendizado acontece de forma simples, natural e prática.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Existem cursos para quais idades na Your Way Languages?</summary>
+        <p class="faq-item-answer">Sim! Atendemos a partir dos 2 anos de idade até o público adulto, com turmas em grupos pequenos ou aulas individuais, sempre respeitando o ritmo de cada aluno.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Como posso me matricular na Your Way Languages?</summary>
+        <p class="faq-item-answer">É simples: basta enviar uma mensagem pelo WhatsApp ou visitar nossa unidade, na R. Cel. Rocha Santos, 98 — Jardim Brasília, Resende - RJ.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Os cursos da Your Way Languages preparam para testes de proficiência em idiomas?</summary>
+        <p class="faq-item-answer">Sim, oferecemos preparação para provas de proficiência internacionais, como Cambridge e TOEFL.</p>
+      </details>
+      <details class="faq-item">
+        <summary>A Your Way Languages oferece certificados ao fim dos cursos?</summary>
+        <p class="faq-item-answer">Sim, todos os alunos recebem certificado de conclusão ao final do curso.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA BANNER ═══ -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Pronto para começar sua jornada no inglês?</h2>
+    <p>Agende uma aula experimental gratuita e descubra o curso ideal para você!</p>
+    <a href="https://wa.me/5524992520409?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20as%20turmas." target="_blank" rel="noopener noreferrer" class="btn-white">
+      Agendar aula experimental
+    </a>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section class="contact" id="contato">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Contato</div>
+      <h2 class="section-title">Venha nos conhecer</h2>
+      <p class="section-desc">Estamos prontos para tirar suas dúvidas e encontrar o melhor curso para você.</p>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-info-cards">
+          <div class="contact-info-card">
+            <div class="contact-info-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 6.72 11.34 7.01 11.6a1.5 1.5 0 0 0 1.98 0C13.28 21.34 20 15.25 20 10c0-4.42-3.58-8-8-8zm0 10.75A2.75 2.75 0 1 1 12 7.25a2.75 2.75 0 0 1 0 5.5z"/></svg></div>
+            <div>
+              <div class="contact-info-label">Endereço</div>
+              <div class="contact-info-value">R. Cel. Rocha Santos, 98 — Jardim Brasília, Resende - RJ</div>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-info-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2z"/></svg></div>
+            <div>
+              <div class="contact-info-label">Telefone</div>
+              <div class="contact-info-value">(24) 99252-0409</div>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-info-icon">📧</div>
+            <div>
+              <div class="contact-info-label">E-mail</div>
+              <div class="contact-info-value">coordenacaoywl@gmail.com</div>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-info-icon">🕒</div>
+            <div style="width:100%">
+              <div class="contact-info-label">Horário de Funcionamento</div>
+              <table class="contact-hours-table">
+                <tr><td>Segunda-feira</td><td>09:00–21:00</td></tr>
+                <tr><td>Terça-feira</td><td>09:00–21:00</td></tr>
+                <tr><td>Quarta-feira</td><td>09:00–21:00</td></tr>
+                <tr><td>Quinta-feira</td><td>09:00–21:00</td></tr>
+                <tr><td>Sexta-feira</td><td>09:00–21:00</td></tr>
+                <tr><td>Sábado</td><td>09:00–12:00</td></tr>
+                <tr class="closed"><td>Domingo</td><td>Fechado</td></tr>
+              </table>
+            </div>
+          </div>
+          <a href="https://wa.me/5524992520409?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20as%20turmas." target="_blank" rel="noopener noreferrer" class="contact-info-card" style="cursor:pointer">
+            <div class="contact-info-icon" style="background:#25D366"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.693 4.612 1.885 6.487L4 29l7.716-1.853A11.94 11.94 0 0 0 16.001 27C22.629 27 28 21.627 28 15S22.629 3 16.001 3zm0 21.818c-1.94 0-3.84-.522-5.49-1.51l-.394-.233-4.58 1.1 1.122-4.462-.257-.406A9.77 9.77 0 0 1 5.182 15c0-5.964 4.855-10.818 10.819-10.818S26.818 9.036 26.818 15 21.965 24.818 16.001 24.818zm5.981-8.15c-.328-.164-1.94-.957-2.24-1.066-.301-.109-.52-.164-.738.164-.219.328-.848 1.066-1.04 1.285-.191.219-.383.246-.71.082-.328-.164-1.386-.511-2.64-1.63-.976-.87-1.635-1.944-1.827-2.272-.191-.328-.02-.505.144-.668.148-.147.328-.383.492-.574.164-.191.219-.328.328-.547.109-.219.055-.41-.027-.574-.082-.164-.738-1.78-1.012-2.437-.267-.64-.538-.553-.738-.563l-.63-.011c-.219 0-.574.082-.874.41-.301.328-1.148 1.121-1.148 2.734s1.176 3.172 1.34 3.39c.164.219 2.312 3.53 5.605 4.95.783.338 1.394.54 1.87.69.786.25 1.502.215 2.068.13.631-.094 1.94-.793 2.213-1.559.273-.766.273-1.422.191-1.559-.082-.137-.301-.219-.629-.383z"/></svg></div>
+            <div>
+              <div class="contact-info-label">WhatsApp</div>
+              <div class="contact-info-value">Clique para conversar →</div>
+            </div>
+          </a>
+        </div>
+        <div class="contact-map">
+          <iframe
+            src="https://www.google.com/maps?q=Your+Way+Languages,+R.+Cel.+Rocha+Santos,+98,+Jardim+Brasilia,+Resende+-+RJ,+27515-000&output=embed"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            title="Localização Your Way Languages"
+          ></iframe>
+        </div>
+      </div>
+      <div class="contact-form-wrap">
+        <h3>Envie sua mensagem</h3>
+        <p>Preencha o formulário e entraremos em contato o mais breve possível.</p>
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Nome completo</label>
+              <input type="text" placeholder="Seu nome" autocomplete="name" maxlength="100" required>
+            </div>
+            <div class="form-group">
+              <label>Telefone</label>
+              <input type="tel" placeholder="(24) 99999-9999" autocomplete="tel" maxlength="20" pattern="[0-9()\-\s+]{8,20}" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>E-mail</label>
+            <input type="email" placeholder="seu@email.com" autocomplete="email" maxlength="150" required>
+          </div>
+          <div class="form-group">
+            <label>Turma de interesse</label>
+            <select required>
+              <option value="">Selecione...</option>
+              <option>English Baby (a partir de 2 anos)</option>
+              <option>English Kids (Crianças)</option>
+              <option>English Teens (Adolescentes)</option>
+              <option>English Adults (Adultos)</option>
+              <option>Preparatório para Exames</option>
+              <option>Ainda não sei — quero mais informações</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Mensagem</label>
+            <textarea placeholder="Conte-nos um pouco sobre o que você precisa..." maxlength="600"></textarea>
+          </div>
+          <button type="submit" class="form-submit">Enviar mensagem →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <div class="footer-brand-icon"><img src="assets/logo-transparent.png" alt="Your Way Languages"></div>
+          <div class="footer-brand-name">Your Way Languages</div>
+        </div>
+        <p class="footer-desc">
+          Curso de idiomas focado na aprendizagem para fins específicos.
+          Venha aprender inglês do seu jeito!
+        </p>
+        <div class="footer-social">
+          <a href="https://instagram.com/yourwaylanguages" target="_blank" rel="noopener noreferrer" title="Instagram" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+          <a href="https://facebook.com/yourwaylanguages" target="_blank" rel="noopener noreferrer" title="Facebook" style="background:#1877F2"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 12.06C22 6.505 17.523 2 12 2S2 6.505 2 12.06c0 5.02 3.657 9.184 8.438 9.94v-7.03H7.898v-2.91h2.54V9.845c0-2.508 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.63.771-1.63 1.562v1.877h2.773l-.443 2.91h-2.33V22c4.78-.756 8.437-4.92 8.437-9.94z"/></svg></a>
+          <a href="https://wa.me/5524992520409?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20as%20turmas." target="_blank" rel="noopener noreferrer" title="WhatsApp" style="background:#25D366"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.693 4.612 1.885 6.487L4 29l7.716-1.853A11.94 11.94 0 0 0 16.001 27C22.629 27 28 21.627 28 15S22.629 3 16.001 3zm0 21.818c-1.94 0-3.84-.522-5.49-1.51l-.394-.233-4.58 1.1 1.122-4.462-.257-.406A9.77 9.77 0 0 1 5.182 15c0-5.964 4.855-10.818 10.819-10.818S26.818 9.036 26.818 15 21.965 24.818 16.001 24.818zm5.981-8.15c-.328-.164-1.94-.957-2.24-1.066-.301-.109-.52-.164-.738.164-.219.328-.848 1.066-1.04 1.285-.191.219-.383.246-.71.082-.328-.164-1.386-.511-2.64-1.63-.976-.87-1.635-1.944-1.827-2.272-.191-.328-.02-.505.144-.668.148-.147.328-.383.492-.574.164-.191.219-.328.328-.547.109-.219.055-.41-.027-.574-.082-.164-.738-1.78-1.012-2.437-.267-.64-.538-.553-.738-.563l-.63-.011c-.219 0-.574.082-.874.41-.301.328-1.148 1.121-1.148 2.734s1.176 3.172 1.34 3.39c.164.219 2.312 3.53 5.605 4.95.783.338 1.394.54 1.87.69.786.25 1.502.215 2.068.13.631-.094 1.94-.793 2.213-1.559.273-.766.273-1.422.191-1.559-.082-.137-.301-.219-.629-.383z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Cursos</h4>
+        <a href="#cursos">English Baby</a>
+        <a href="#cursos">English Kids</a>
+        <a href="#cursos">English Teens</a>
+        <a href="#cursos">English Adults</a>
+        <a href="#cursos">Preparatório</a>
+      </div>
+      <div class="footer-col">
+        <h4>Links</h4>
+        <a href="#sobre">Sobre nós</a>
+        <a href="#metodo">Metodologia</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#galeria">Galeria</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <a href="tel:+5524992520409">(24) 99252-0409</a>
+        <a href="mailto:coordenacaoywl@gmail.com">coordenacaoywl@gmail.com</a>
+        <a href="#contato">Formulário de contato</a>
+        <a href="https://wa.me/5524992520409?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20as%20turmas." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Your Way Languages. Todos os direitos reservados.</span>
+      <span>Resende - RJ | R. Cel. Rocha Santos, 98</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ WHATSAPP FLOAT ═══ -->
+<a href="https://wa.me/5524992520409?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20as%20turmas." target="_blank" rel="noopener noreferrer" class="whatsapp-float">
+  <span class="whatsapp-label">Fale conosco!</span>
+  <div class="whatsapp-btn"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.693 4.612 1.885 6.487L4 29l7.716-1.853A11.94 11.94 0 0 0 16.001 27C22.629 27 28 21.627 28 15S22.629 3 16.001 3zm0 21.818c-1.94 0-3.84-.522-5.49-1.51l-.394-.233-4.58 1.1 1.122-4.462-.257-.406A9.77 9.77 0 0 1 5.182 15c0-5.964 4.855-10.818 10.819-10.818S26.818 9.036 26.818 15 21.965 24.818 16.001 24.818zm5.981-8.15c-.328-.164-1.94-.957-2.24-1.066-.301-.109-.52-.164-.738.164-.219.328-.848 1.066-1.04 1.285-.191.219-.383.246-.71.082-.328-.164-1.386-.511-2.64-1.63-.976-.87-1.635-1.944-1.827-2.272-.191-.328-.02-.505.144-.668.148-.147.328-.383.492-.574.164-.191.219-.328.328-.547.109-.219.055-.41-.027-.574-.082-.164-.738-1.78-1.012-2.437-.267-.64-.538-.553-.738-.563l-.63-.011c-.219 0-.574.082-.874.41-.301.328-1.148 1.121-1.148 2.734s1.176 3.172 1.34 3.39c.164.219 2.312 3.53 5.605 4.95.783.338 1.394.54 1.87.69.786.25 1.502.215 2.068.13.631-.094 1.94-.793 2.213-1.559.273-.766.273-1.422.191-1.559-.082-.137-.301-.219-.629-.383z"/></svg></div>
+</a>
+
+<script src="assets/main.js" defer></script>
+</body>
+</html>

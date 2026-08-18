@@ -1,0 +1,11 @@
+# Arquivo de headers de segurança para hospedagem na NETLIFY.
+# Se você NÃO for usar a Netlify, pode apagar este arquivo (use vercel.json ou .htaccess).
+# A Netlify detecta e aplica este arquivo automaticamente, sem nenhuma configuração extra.
+
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=()
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; frame-src https://www.google.com; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'self';

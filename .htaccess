@@ -1,0 +1,26 @@
+# Configuração de headers de segurança para hospedagem tradicional (Apache/cPanel),
+# como Hostinger, Locaweb, GoDaddy etc. Se você NÃO for usar hospedagem Apache,
+# pode apagar este arquivo (use _headers ou vercel.json).
+# Requer o módulo mod_headers ativado (ativo por padrão na grande maioria dos provedores).
+
+<IfModule mod_headers.c>
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), camera=(), microphone=(), payment=()"
+  Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; frame-src https://www.google.com; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'self';"
+</IfModule>
+
+# Força HTTPS (redireciona qualquer acesso http:// para https://)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Bloqueia listagem de diretórios e acesso a arquivos de configuração/ocultos
+Options -Indexes
+<FilesMatch "^(\.htaccess|\.htpasswd|\.git.*|\.env)$">
+  Require all denied
+</FilesMatch>
