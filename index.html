@@ -3,9 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Way Languages | Curso de Idiomas em Resende - RJ</title>
+<title>Your Way Languages | Curso de Inglês em Resende - RJ</title>
 <link rel="icon" type="image/png" href="assets/logoyourwaylanguages.png">
-<meta name="description" content="Curso de idiomas focado na aprendizagem para fins específicos. Inglês para bebês, crianças, adolescentes e adultos. Preparatório para exames. Resende - RJ.">
+<meta name="description" content="Curso de inglês focado na aprendizagem para fins específicos. Inglês para bebês, crianças, adolescentes e adultos. Preparatório para exames. Resende - RJ.">
+<!-- Open Graph / preview de link (WhatsApp, Facebook, etc.) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Your Way Languages">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://www.yourwaylanguages.com.br/">
+<meta property="og:title" content="Your Way Languages | Curso de Inglês em Resende - RJ">
+<meta property="og:description" content="Curso de inglês em Resende - RJ, do bebê ao adulto. Aulas dinâmicas, foco em conversação e preparação para exames internacionais. Matrículas abertas — agende sua aula experimental!">
+<meta property="og:image" content="https://www.yourwaylanguages.com.br/assets/frente.JPG">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Your Way Languages | Curso de Inglês em Resende - RJ">
+<meta name="twitter:description" content="Curso de inglês em Resende - RJ, do bebê ao adulto. Aulas dinâmicas, foco em conversação e preparação para exames internacionais. Matrículas abertas — agende sua aula experimental!">
+<meta name="twitter:image" content="https://www.yourwaylanguages.com.br/assets/frente.JPG">
 <!-- Segurança: CSP restringe de onde o site pode carregar script/estilo/fonte/imagem/iframe.
      Observação: a diretiva frame-ancestors (proteção contra clickjacking) é ignorada quando
      entregue via <meta> pelo próprio padrão do navegador — só funciona como header HTTP real
@@ -472,6 +484,79 @@ ul { list-style: none; }
   font-size: 0.75rem;
   flex-shrink: 0;
 }
+.about-gallery-carousel {
+  position: relative;
+  margin-top: 36px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  aspect-ratio: 16/9;
+}
+.about-gallery-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.about-gallery-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+.about-gallery-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.about-gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.9);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--navy);
+  transition: var(--transition);
+  z-index: 2;
+}
+.about-gallery-arrow:hover { background: var(--red); color: var(--white); }
+.about-gallery-arrow-prev { left: 10px; }
+.about-gallery-arrow-next { right: 10px; }
+.about-gallery-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  background: linear-gradient(to top, rgba(28,45,74,0.75), transparent);
+}
+.about-gallery-caption-text {
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.about-gallery-dots {
+  display: flex;
+  gap: 6px;
+}
+.about-gallery-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.6);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.about-gallery-dot.active { background: var(--white); width: 20px; }
 
 /* ═══════════════════════════════════════════ */
 /*  COURSES                                    */
@@ -1341,7 +1426,7 @@ ul { list-style: none; }
       </div>
       <h1>Aprenda inglês<br><em>do seu jeito</em></h1>
       <p class="hero-sub">
-        Curso de idiomas focado na aprendizagem para fins específicos.
+        Curso de inglês focado na aprendizagem para fins específicos.
         Para bebês, crianças, adolescentes e adultos — com metodologia lúdica
         e preparatório para exames internacionais.
       </p>
@@ -1392,11 +1477,29 @@ ul { list-style: none; }
 <!-- ═══ ABOUT ═══ -->
 <section class="about" id="sobre">
   <div class="container about-grid">
-    <div class="about-img-wrap">
-      <div class="about-img"><img src="assets/frente.JPG" alt="Fachada da Your Way Languages"></div>
-      <div class="about-img-float">
-        <img src="assets/logo-transparent.png" alt="Your Way Languages" class="about-img-float-logo">
-        <div class="about-img-float-label">Resende - RJ</div>
+    <div>
+      <div class="about-img-wrap">
+        <div class="about-img"><img src="assets/frente.JPG" alt="Fachada da Your Way Languages"></div>
+        <div class="about-img-float">
+          <img src="assets/logo-transparent.png" alt="Your Way Languages" class="about-img-float-logo">
+          <div class="about-img-float-label">Resende - RJ</div>
+        </div>
+      </div>
+      <div class="about-gallery-carousel" id="aboutGalleryCarousel">
+        <div class="about-gallery-track" id="aboutGalleryTrack">
+          <div class="about-gallery-slide" data-caption="Recepção"><img src="assets/about-reception.jpg" alt="Recepção da Your Way Languages"></div>
+          <div class="about-gallery-slide" data-caption="Área de espera"><img src="assets/about-waiting-area.jpg" alt="Área de espera da Your Way Languages"></div>
+          <div class="about-gallery-slide" data-caption="Sala de aula"><img src="assets/about-classroom-cambridge.jpg" alt="Sala de aula com material Cambridge"></div>
+          <div class="about-gallery-slide" data-caption="Sala de aula"><img src="assets/about-classroom-colorful.jpg" alt="Sala de aula com cadeiras coloridas"></div>
+          <div class="about-gallery-slide" data-caption="Espaço Kids"><img src="assets/about-kids-room.jpg" alt="Espaço lúdico para as turmas infantis"></div>
+          <div class="about-gallery-slide" data-caption="Aulas individuais"><img src="assets/about-meeting-room.jpg" alt="Sala para aulas individuais e de conversação"></div>
+        </div>
+        <button class="about-gallery-arrow about-gallery-arrow-prev" aria-label="Foto anterior">‹</button>
+        <button class="about-gallery-arrow about-gallery-arrow-next" aria-label="Próxima foto">›</button>
+        <div class="about-gallery-caption">
+          <span class="about-gallery-caption-text" id="aboutGalleryCaptionText">Recepção</span>
+          <div class="about-gallery-dots" id="aboutGalleryDots"></div>
+        </div>
       </div>
     </div>
     <div class="about-content">
@@ -1405,10 +1508,11 @@ ul { list-style: none; }
         <h2 class="section-title">Inglês para fins específicos, do seu jeito</h2>
       </div>
       <p class="about-text">
-        A <strong>Your Way Languages</strong> é um curso de idiomas em Resende - RJ,
-        focado na aprendizagem para fins específicos. Nossa metodologia combina
-        aulas estruturadas com atividades lúdicas e interativas, garantindo que
-        cada aluno aprenda no seu próprio ritmo e com propósito.
+        A <strong>Your Way Languages</strong> é um curso de inglês em Resende - RJ,
+        focado na aprendizagem para fins específicos — e também oferece aulas de
+        espanhol para quem quer ampliar ainda mais o repertório. Nossa metodologia
+        combina aulas estruturadas com atividades lúdicas e interativas, garantindo
+        que cada aluno aprenda no seu próprio ritmo e com propósito.
       </p>
       <p class="about-text">
         Acreditamos que aprender inglês pode — e deve — ser divertido! Desde
@@ -1875,8 +1979,8 @@ ul { list-style: none; }
           <div class="footer-brand-name">Your Way Languages</div>
         </div>
         <p class="footer-desc">
-          Curso de idiomas focado na aprendizagem para fins específicos.
-          Venha aprender inglês do seu jeito!
+          Curso de inglês focado na aprendizagem para fins específicos.
+          Aulas de espanhol também disponíveis. Venha aprender do seu jeito!
         </p>
         <div class="footer-social">
           <a href="https://instagram.com/yourwaylanguages" target="_blank" rel="noopener noreferrer" title="Instagram" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>

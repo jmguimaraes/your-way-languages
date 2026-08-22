@@ -85,6 +85,53 @@ if (testimonialTrack) {
   testimonialsCarouselEl.addEventListener('mouseleave', startTestimonialAutoplay);
 }
 
+// ABOUT PHOTO CAROUSEL
+let aboutGalleryIndex = 0;
+const aboutGalleryTrack = document.getElementById('aboutGalleryTrack');
+const aboutGalleryDots = document.getElementById('aboutGalleryDots');
+const aboutGalleryCaptionText = document.getElementById('aboutGalleryCaptionText');
+const aboutGallerySlides = aboutGalleryTrack ? Array.from(aboutGalleryTrack.children) : [];
+if (aboutGalleryTrack) {
+  aboutGallerySlides.forEach((slide, i) => {
+    const dot = document.createElement('span');
+    dot.className = 'about-gallery-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => goToAboutGallery(i));
+    aboutGalleryDots.appendChild(dot);
+  });
+}
+function updateAboutGallery() {
+  aboutGalleryTrack.style.transform = `translateX(-${aboutGalleryIndex * 100}%)`;
+  Array.from(aboutGalleryDots.children).forEach((d, i) => d.classList.toggle('active', i === aboutGalleryIndex));
+  if (aboutGalleryCaptionText) {
+    aboutGalleryCaptionText.textContent = aboutGallerySlides[aboutGalleryIndex].dataset.caption || '';
+  }
+}
+function moveAboutGallery(dir) {
+  aboutGalleryIndex = (aboutGalleryIndex + dir + aboutGallerySlides.length) % aboutGallerySlides.length;
+  updateAboutGallery();
+}
+function goToAboutGallery(i) {
+  aboutGalleryIndex = i;
+  updateAboutGallery();
+}
+let aboutGalleryAutoplay;
+function startAboutGalleryAutoplay() {
+  clearInterval(aboutGalleryAutoplay);
+  if (aboutGallerySlides.length > 1) {
+    aboutGalleryAutoplay = setInterval(() => moveAboutGallery(1), 4500);
+  }
+}
+if (aboutGalleryTrack) {
+  const aboutGalleryCarouselEl = document.getElementById('aboutGalleryCarousel');
+  const aboutGalleryPrevBtn = aboutGalleryCarouselEl.querySelector('.about-gallery-arrow-prev');
+  const aboutGalleryNextBtn = aboutGalleryCarouselEl.querySelector('.about-gallery-arrow-next');
+  if (aboutGalleryPrevBtn) aboutGalleryPrevBtn.addEventListener('click', () => moveAboutGallery(-1));
+  if (aboutGalleryNextBtn) aboutGalleryNextBtn.addEventListener('click', () => moveAboutGallery(1));
+  startAboutGalleryAutoplay();
+  aboutGalleryCarouselEl.addEventListener('mouseenter', () => clearInterval(aboutGalleryAutoplay));
+  aboutGalleryCarouselEl.addEventListener('mouseleave', startAboutGalleryAutoplay);
+}
+
 // SCROLL ANIMATIONS
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
